@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 const Result = () => {
     const state = useLocation();
     console.log(state);
-    const { result } = state.state;
+    const { result , resultImg } = state.state;
     console.log(result)
   return (
     <div className="flex flex-col gap-5 py-14 px-6">
@@ -20,7 +20,7 @@ const Result = () => {
               .fill(0)
               .map((item, index) => (
                 <img
-                  src="https://source.unsplash.com/random"
+                  src={resultImg}
                   alt="img"
                   className="h-1/4 w-3/5 rounded-lg"
                   key={index}
@@ -29,14 +29,16 @@ const Result = () => {
           </div>
           <div className="h-full w-1/2 p-3">
             <img
-              src="https://source.unsplash.com/random"
+              src={resultImg}
               alt="img"
               className="h-full w-full rounded-lg"
             />
           </div>
         </div>
         <div className="w-1/2 p-5 text-white">
-          {result}
+           <h1 className="flex items-center justify-center">
+            {result}
+           </h1>
         </div>
       </div>
     </div>
